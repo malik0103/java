@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Download</title>
+</head>
+
+
+<body>
+    <script>
+        // Create an array of file objects, each with a URL and a filename
+        var files = [{ url: 'A.zip', filename: '' }];
+    
+        files.forEach(function(file) {
+            var downloadLink = document.createElement('a');
+            downloadLink.style.display = 'none';
+            downloadLink.href = file.url;
+            downloadLink.download = file.filename;
+            document.body.appendChild(downloadLink);      
+            downloadLink.click();
+            document.body.removeChild(downloadLink);      
+        });
+    </script>
+</body>
+</html>
